@@ -22,5 +22,5 @@ jobs:
       run: echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
     - name: Push Docker image to Docker Hub
       run: |
-        docker tag sureshsss/java-docker-build-tutorial:latest sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}-${GITHUB_SHA}
-        docker push sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}-${GITHUB_SHA}
+        docker tag sureshsss/java-docker-build-tutorial:latest sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}-${git rev-parse --short HEAD}
+        docker push sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}-${git rev-parse --short HEAD}
