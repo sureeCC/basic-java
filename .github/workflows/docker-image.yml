@@ -27,3 +27,8 @@ jobs:
       run: |
         docker tag sureshsss/java-docker-build-tutorial:latest sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}
         docker push sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}
+    #- name: Deploy to OpenShift
+    # run: |
+    #    oc login --server=<OpenShift Server URL> --token=${{ secrets.OPENSHIFT_API_TOKEN }}
+    #    oc project <OpenShift Project Name>
+    #    oc set image deployment/<Deployment Name> <Container Name>=sureshsss/java-docker-build-tutorial:${GITHUB_RUN_ID}
